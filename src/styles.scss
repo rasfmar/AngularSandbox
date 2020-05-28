@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+@import 'assets/variables.scss';
+
+body {
+    font-family: 'Lato', sans-serif !important;
+    font-weight: 300;
+    background: $offwhite;
+}
+
+a[href]:not(.nav-link):not(.navbar-brand) {
+    color: $offblue;
+    display: inline-block;
+
+    &:before {
+        content: '';
+        background-color: $offblue;
+        position: relative;
+        display: inline-block;
+        height: 2px;
+        width: 100%;
+        margin-right: -100%;
+        margin-bottom: -6px;
+        transition: $transition;
+    }
+
+    &:hover, &:active, &:focus {
+        color: $offblue;
+        text-decoration: none;
+
+        &:before {
+            width: 0;
+            margin-right: 0;
+        }
+    }
+}
+
+.fw- {
+    &100 { font-weight: 100; }
+    &300 { font-weight: 300; }
+    &400 { font-weight: 400; }
+    &700 { font-weight: 700; }
+    &900 { font-weight: 900; }
+}
+
+.divider {
+    position: relative;
+    display: block;
+    height: 3px;
+    width: 3em;
+    margin: 4em 0;
+    background-color: $offpurple;
+}

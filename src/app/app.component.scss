@@ -1,0 +1,19 @@
+@import '../assets/variables.scss';
+
+nav {
+    background: linear-gradient(to right, $offpurple, $offblue);
+    color: $offwhite;
+
+    .navbar-brand {
+        font-weight: 700;
+
+        u {
+            text-decoration: none;
+            color: $offlightgrey;
+        }
+    }
+
+    .nav-link {
+        margin: 0 0.5em;
+    }
+}

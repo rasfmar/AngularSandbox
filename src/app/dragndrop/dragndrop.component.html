@@ -1,0 +1,75 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <h2 class="fw-700">Math game</h2>
+            <h5 class="fw-300">Instructions: arrange the following boxes such that the equation is true!</h5>
+            <div [class.hidden]="!checkMath()">
+                <h1 class="fw-900">Congratulations! Your math is correct!</h1>
+            </div>
+            <br/>
+            <h5 class="fw-300">Equation:</h5>
+            <div
+                class="box-list box-list-white"
+                cdkDropList
+                cdkDropListOrientation="horizontal"
+                #symbolsList="cdkDropList"
+                [cdkDropListData]="symbols"
+                [cdkDropListConnectedTo]="[trashList]"
+                (cdkDropListDropped)="drop($event)"
+            >
+                <div class="box box-white" *ngFor="let symbol of symbols" cdkDrag>{{ symbol }}</div>
+            </div>
+            <br/>
+            <h5 class="fw-300">Trash:</h5>
+            <div
+                class="box-list box-list-white"
+                cdkDropList
+                cdkDropListOrientation="horizontal"
+                #trashList="cdkDropList"
+                [cdkDropListData]="trash"
+                [cdkDropListConnectedTo]="[symbolsList]"
+                (cdkDropListDropped)="drop($event)"
+            >
+                <div class="box box-white" *ngFor="let symbol of trash" cdkDrag>{{ symbol }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg">
+            <h2 class="fw-700 my-5">Dragging boxes</h2>
+            <div class="box" cdkDrag>
+                Click to move me!
+            </div>
+            <br/>
+            <div class="box box-white" cdkDrag>
+                Click to move me!
+            </div>
+        </div>
+        <div class="col-lg text-center">
+            <h2 class="fw-700 my-5">Sorting between lists</h2>
+            <div 
+                class="box-list mr-3" 
+                cdkDropList
+                #listOne="cdkDropList"
+                [cdkDropListData]="letters"
+                [cdkDropListConnectedTo]="[listTwo]"
+                (cdkDropListDropped)="drop($event)"
+            >
+                <div class="box" *ngFor="let letter of letters" cdkDrag>{{ letter }}</div>
+            </div>
+        </div>
+        <div class="col-lg text-center">
+            <h2 class="fw-700 my-5">Sorting between lists</h2>
+            <div
+                class="box-list" 
+                cdkDropList
+                #listTwo="cdkDropList"
+                [cdkDropListData]="numbers"
+                [cdkDropListConnectedTo]="[listOne]"
+                (cdkDropListDropped)="drop($event)"
+            >
+                <div class="box" *ngFor="let number of numbers" cdkDrag>{{ number }}</div>
+            </div>
+        </div>
+    </div>
+</div>
