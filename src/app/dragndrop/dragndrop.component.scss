@@ -53,6 +53,10 @@
         display: flex;
         flex-direction: row;
     }
+
+    &-list.sym .box {
+        max-width: 4em;
+    }
 }
 
 .cdk-drag-placeholder {

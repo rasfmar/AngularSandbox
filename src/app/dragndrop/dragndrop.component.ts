@@ -36,7 +36,11 @@ export class DragndropComponent implements OnInit {
 
   checkMath(): boolean {
     try {
-      return eval(this.symbols.join(''));
+      var res = eval(this.symbols.join(''));
+      if(typeof(res) == typeof(true) && res == true)
+        return true;
+      else
+        return false;
     } catch(e) {
       return false;
     }
