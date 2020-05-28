@@ -11,6 +11,12 @@
     text-align: center;
     background: linear-gradient(45deg, $offpurple, $offblue);
 
+    @media (max-width: 767.99px) {
+        width: 8em;
+        height: 4em;
+        padding: 1em;
+    }
+
     &-white {
         color: $offdarkgrey;
         background: darken($offwhite,15);
@@ -24,6 +30,11 @@
         min-height: 6em;
         background: linear-gradient(45deg, rgba($offpurple,0.25), rgba($offblue,0.25));
         box-shadow: 0 0 2em rgba(0,0,0,0.1);
+
+        @media (max-width: 767.99px) {
+            min-width: 8em;
+            min-height: 4em;
+        }
 
         .box {
             box-shadow: none;
